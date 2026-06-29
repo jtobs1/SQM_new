@@ -51,7 +51,8 @@ def sqm_plot202x(dataframe, title, year, vmin, vmax):
 
     ax[1].boxplot(flattened_data, positions=positions, widths=0.6, patch_artist=True,
                   boxprops=dict(facecolor='lightblue', color='blue'),
-                  medianprops=dict(color='red'))
+                  medianprops=dict(color='red'),
+                  showfliers=False, sym='')
     ax[1].set_ylabel('mags/arcsec²')
     ax[1].set_ylim(vmin, vmax)
     # set x-tick labels to be the lunar phases at each of the positions
@@ -82,7 +83,8 @@ def sqm_plot202x(dataframe, title, year, vmin, vmax):
     
     ax[2].boxplot(flattened_data_cloud, positions=positions_cloud, widths=0.6, patch_artist=True,
                   boxprops=dict(facecolor='lightgreen', color='green'),
-                  medianprops=dict(color='red'))
+                  medianprops=dict(color='red'),
+                  showfliers=False, sym='')
     ax[2].set_xticks(ticks=positions_cloud, labels=[f"{coverages[i%6]}" for i in range(len(positions_cloud))], rotation=90)
     ax[2].set_ylabel('mags/arcsec²')
     ax[2].set_ylim(vmin, vmax)
